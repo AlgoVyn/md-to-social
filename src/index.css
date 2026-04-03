@@ -1,0 +1,21 @@
+:root {
+  --primary-color: #0a66c2;
+  --bg-color: #f3f2ef;
+  --text-color: #000000e6;
+  --text-secondary: #00000099;
+  --border-color: #0000001f;
+  --surface-color: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}

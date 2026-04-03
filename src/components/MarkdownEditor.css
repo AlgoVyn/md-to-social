@@ -1,0 +1,20 @@
+.editor-container {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: var(--surface-color);
+}
+
+.codemirror-editor {
+  height: 100%;
+  font-size: 14px;
+}
+
+.cm-editor {
+  height: 100%;
+}
+
+.cm-scroller {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  padding: 1rem 0;
+}

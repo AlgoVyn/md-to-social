@@ -1,0 +1,74 @@
+## Project Brief: Social Media Markdown Converter
+
+**Project Title:** SocialBoost Markdown Converter
+
+**Date:** October 26, 2023
+
+---
+
+### 1. Executive Summary
+
+SocialBoost Markdown Converter is a desktop web application designed to empower content creators by streamlining the process of writing and optimizing social media posts. It provides a clean, productivity-focused environment where users can write content in Markdown, see a live preview of how it will appear on specific social media platforms (e.g., LinkedIn), and easily format it for maximum impact, ultimately boosting efficiency and post quality.
+
+### 2. Problem Statement
+
+Content creators often struggle with:
+*   Formatting posts manually for different social media platforms, which can be time-consuming and inconsistent.
+*   Losing formatting or having unexpected visual outputs when copying text from rich text editors to social platforms.
+*   The lack of a unified tool to draft, preview, and optimize content for multiple platforms simultaneously.
+
+### 3. Solution Overview
+
+SocialBoost Markdown Converter will address these challenges by offering a dedicated web application with an "Editor and Preview" interface. Users will write in Markdown, receive real-time feedback on formatting through platform-specific previews, and utilize smart formatting tools to tailor their content for engagement on channels like LinkedIn.
+
+### 4. Target Audience
+
+*   **Content Creators:** Bloggers, marketers, social media managers, professionals.
+*   **Business Owners:** Individuals or small businesses looking to enhance their social media presence.
+*   **Anyone** who regularly posts structured text on social media and values efficiency and professional presentation.
+
+### 5. Key Features & Components
+
+The initial release will focus on the following core screens and functionalities:
+
+#### 5.1. Markdown Editor Workspace
+*   **Description:** The primary interface for content creation.
+*   **Layout:** A split-screen, desktop-optimized layout.
+    *   **Left Pane (Editor):** A clean text editor with line numbers and subtle Markdown syntax highlighting (e.g., blue for links, bold for headers).
+    *   **Right Pane (Live Preview):** A "LinkedIn Post Preview" that accurately mimics the actual LinkedIn UI (including a placeholder profile picture, name, '1st' degree connection, and the rendered text).
+*   **Toolbar (Top):**
+    *   "Copy to Clipboard" button (for the converted output).
+    *   "Platform Selector" dropdown (initially with "LinkedIn" selected, expandable for other platforms).
+    *   "Format Settings" button (to access conversion style options).
+*   **Theme:** Professional, using a light grayscale palette with LinkedIn blue as a primary action color.
+
+#### 5.2. Template & Style Gallery
+*   **Description:** A dedicated area (sidebar or overlay) to apply predefined formatting rules.
+*   **Functionality:** Users can select styles like "Professional," "Bold Headers," or "Bullet Point Optimized" to automatically adjust how the Markdown is converted and rendered for the selected social platform, ensuring consistency and adherence to best practices.
+
+#### 5.3. Conversion History
+*   **Description:** A dashboard view for managing past content.
+*   **Functionality:** Allows users to access, review, edit, and re-convert previously drafted snippets and posts. This acts as a personal content library.
+
+### 6. Technical Considerations / Assumptions
+
+*   **Platform:** Desktop Web Application.
+*   **Technology Stack:** Will require a robust Markdown parser, a UI framework for responsive design, and potential backend services for user accounts (future phase) and history storage.
+*   **Browser Compatibility:** Modern evergreen browsers (Chrome, Firefox, Edge, Safari).
+*   **Real-time Conversion:** The preview should update in near real-time as the user types.
+
+### 7. Future Considerations / Phased Rollout (Beyond MVP)
+
+*   **Additional Platform Previews:** Expand "Platform Selector" to include Twitter/X, Medium, Facebook, Instagram (potentially image captions), etc.
+*   **Dark Mode:** Option for a dark theme for the editor and overall application.
+*   **"Magic Format" Button:** An AI-powered or rule-based feature to auto-optimize content for engagement based on the selected platform.
+*   **User Accounts & Cloud Sync:** Store conversion history and templates across devices.
+*   **Advanced Analytics:** Track post performance (if API access allows) directly from the tool.
+*   **Integration:** Direct posting to social media platforms (requires API integrations).
+
+### 8. Success Metrics
+
+*   **User Engagement:** Number of active users, average session duration, number of posts converted.
+*   **User Satisfaction:** Feedback, ratings, reduction in manual formatting time reported by users.
+*   **Retention Rate:** Percentage of users who return to use the app after their initial session.
+*   **Conversion Quality:** Feedback on how well the converted output performs on social media (e.g., readability, formatting accuracy).

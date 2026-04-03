@@ -1,0 +1,23 @@
+.workspace {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.workspace-panes {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.pane {
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+}
+
+.left-pane {
+  border-right: 1px solid var(--border-color);
+}

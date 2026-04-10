@@ -70,7 +70,7 @@ const applyInlineStyles = (html: string): string => {
     }
   });
 
-  return doc.body.innerHTML;
+  return DOMPurify.sanitize(doc.body.innerHTML);
 };
 
 export const parseMarkdown = (
@@ -134,7 +134,7 @@ const toUnicodeVariant = (str: string, variant: "bold" | "italic"): string => {
 export const markdownToSocialText = (
   markdown: string,
   style: string = "standard",
-  platform: string = "linkedin",
+  _platform: string = "linkedin",
 ): string => {
   let text = markdown;
 
@@ -143,14 +143,15 @@ export const markdownToSocialText = (
   const inlineCodes: string[] = [];
 
   // Extract code blocks with language detection
+  // Use non-ASCII delimiter characters that won't be affected by text transformations
   text = text.replace(/```(\w+)?\n?([\s\S]*?)```/g, (_match, lang, code) => {
     codeBlocks.push({ lang: lang || "", code: code.trim() });
-    return `__CODE_BLOCK_${codeBlocks.length - 1}__`;
+    return `\u{E000}CODEBLOCK${codeBlocks.length - 1}\u{E001}`;
   });
 
   text = text.replace(/`([^`]+)`/g, (match) => {
     inlineCodes.push(match);
-    return `__INLINE_CODE_${inlineCodes.length - 1}__`;
+    return `\u{E000}INLINECODE${inlineCodes.length - 1}\u{E001}`;
   });
 
   // Replace Headers (always apply bold)
@@ -181,19 +182,15 @@ export const markdownToSocialText = (
   // Restore inline codes as plain backticks
   inlineCodes.forEach((code, i) => {
     const content = code.slice(1, -1); // Remove surrounding backticks
-    text = text.replace(`__INLINE_CODE_${i}__`, `\`${content}\``);
+    text = text.replace(`\u{E000}INLINECODE${i}\u{E001}`, `\`${content}\``);
   });
 
-  // Restore code blocks formatted for LinkedIn native code format
+  // Restore code blocks - LinkedIn doesn't support triple backticks
+  // so we just output the raw code. Users can manually format as code in LinkedIn.
   codeBlocks.forEach((block, i) => {
-    const lang = block.lang ? block.lang : "";
-    // Format: triple backticks with language, newline, code, newline, triple backticks
-    // This format works well with LinkedIn's code formatting button
-    const formatted =
-      platform === "linkedin"
-        ? `\`\`\`${lang}\n${block.code}\n\`\`\``
-        : block.code;
-    text = text.replace(`__CODE_BLOCK_${i}__`, formatted);
+    // Just output the raw code with newlines for separation
+    const formatted = `\n${block.code}\n`;
+    text = text.replace(`\u{E000}CODEBLOCK${i}\u{E001}`, formatted);
   });
 
   return text;

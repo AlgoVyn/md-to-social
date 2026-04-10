@@ -1,55 +1,52 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { Toolbar } from "./Toolbar";
 import { MarkdownEditor } from "./MarkdownEditor";
 import { LivePreview } from "./LivePreview";
 import { StyleModal } from "./StyleModal";
 import { HistoryModal } from "./HistoryModal";
-import { parseMarkdown, markdownToSocialText } from "../utils/markdownParser";
+import { ToastContainer } from "./Toast";
+import { markdownToSocialText } from "../utils/markdownParser";
 import { useHistory } from "../hooks/useHistory";
+import { useToast } from "../hooks/useToast";
 import "./Workspace.css";
 
 export const Workspace: React.FC = () => {
   const [markdown, setMarkdown] = useState<string>(
     "# Hello LinkedIn\n\nWrite your post here...",
   );
-  const [htmlPreview, setHtmlPreview] = useState<string>("");
   const [platform, setPlatform] = useState<string>("linkedin");
   const [formatStyle, setFormatStyle] = useState<string>("standard");
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [isHistoryOpen, setIsHistoryOpen] = useState<boolean>(false);
   const { drafts, saveDraft } = useHistory();
+  const { toasts, addToast, removeToast } = useToast();
+
+  // Memoize the parsed markdown to avoid recomputation
+  const socialPreview = useMemo(() => {
+    return markdownToSocialText(markdown, formatStyle, platform);
+  }, [markdown, formatStyle, platform]);
 
   useEffect(() => {
-    const html = parseMarkdown(markdown, formatStyle);
-    setHtmlPreview(html);
-
     // Auto-save debounced roughly
     const timeout = setTimeout(() => {
       saveDraft(markdown);
     }, 2000);
     return () => clearTimeout(timeout);
-  }, [markdown, formatStyle]);
+  }, [markdown, saveDraft]);
 
   const handleCopy = async () => {
-    const socialText = markdownToSocialText(markdown, formatStyle, platform);
-    const htmlPreview = parseMarkdown(markdown, formatStyle, true); // true = forClipboard with inline styles
+    // Check if clipboard API is available
+    if (!navigator.clipboard || !navigator.clipboard.writeText) {
+      addToast("Clipboard API not available in your browser", "error");
+      return;
+    }
 
     try {
-      const blobHtml = new Blob([htmlPreview], { type: "text/html" });
-      const blobText = new Blob([socialText], { type: "text/plain" });
-
-      const item = new ClipboardItem({
-        "text/html": blobHtml,
-        "text/plain": blobText,
-      });
-      await navigator.clipboard.write([item]);
-      alert(
-        "Copied formatted content to clipboard (Rich Text + Plain Text available)!",
-      );
+      // Use the memoized socialPreview value instead of recalculating
+      await navigator.clipboard.writeText(socialPreview);
+      addToast("Copied to clipboard! Paste into LinkedIn to see formatted content.", "success");
     } catch (e) {
-      // Fallback
-      navigator.clipboard.writeText(socialText);
-      alert("Copied plain text format to clipboard!");
+      addToast("Failed to copy to clipboard", "error");
     }
   };
 
@@ -58,7 +55,10 @@ export const Workspace: React.FC = () => {
   };
 
   return (
-    <div className="workspace">
+    <main className="workspace" role="main" aria-label="Markdown to Social converter workspace">
+      <a href="#markdown-editor" className="skip-link">
+        Skip to editor
+      </a>
       <Toolbar
         onCopy={handleCopy}
         onOpenSettings={handleOpenSettings}
@@ -71,7 +71,10 @@ export const Workspace: React.FC = () => {
           <MarkdownEditor value={markdown} onChange={setMarkdown} />
         </div>
         <div className="pane right-pane">
-          <LivePreview contentHtml={htmlPreview} platform={platform} />
+          <LivePreview
+            contentText={socialPreview}
+            platform={platform}
+          />
         </div>
       </div>
       <StyleModal
@@ -86,6 +89,7 @@ export const Workspace: React.FC = () => {
         drafts={drafts}
         onLoadDraft={(draft) => setMarkdown(draft.markdown)}
       />
-    </div>
+      <ToastContainer toasts={toasts} onRemove={removeToast} />
+    </main>
   );
 };

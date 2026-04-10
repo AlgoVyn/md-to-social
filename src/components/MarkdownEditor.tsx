@@ -10,15 +10,26 @@ interface MarkdownEditorProps {
 
 export const MarkdownEditor: React.FC<MarkdownEditorProps> = ({ value, onChange }) => {
   return (
-    <div className="editor-container">
+    <section className="editor-container" aria-label="Markdown editor">
+      <label htmlFor="markdown-editor" className="visually-hidden">
+        Enter your markdown content
+      </label>
       <CodeMirror
+        id="markdown-editor"
         value={value}
         height="100%"
         extensions={[markdown({ base: markdownLanguage })]}
         onChange={onChange}
         className="codemirror-editor"
         theme="light"
+        aria-label="Markdown editor text area"
+        basicSetup={{
+          lineNumbers: true,
+          highlightActiveLineGutter: true,
+          highlightActiveLine: true,
+          foldGutter: false,
+        }}
       />
-    </div>
+    </section>
   );
 };

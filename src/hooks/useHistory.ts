@@ -22,18 +22,25 @@ export function useHistory() {
 
   const saveDraft = (markdown: string) => {
     if (!markdown.trim()) return;
-    
-    // Simple update logic: if exactly identical content, ignore. Usually you'd use IDs.
-    const newDraft: Draft = {
-      id: Date.now().toString(),
-      markdown,
-      updatedAt: Date.now()
-    };
 
     setDrafts(prev => {
+      // Don't save if identical to most recent draft
+      if (prev[0]?.markdown === markdown) return prev;
+
+      const newDraft: Draft = {
+        id: crypto.randomUUID(),
+        markdown,
+        updatedAt: Date.now()
+      };
+
       // Keep only last 20
       const next = [newDraft, ...prev].slice(0, 20);
-      localStorage.setItem('md-to-social-drafts', JSON.stringify(next));
+      try {
+        localStorage.setItem('md-to-social-drafts', JSON.stringify(next));
+      } catch (e) {
+        // Silently fail if localStorage is not available or quota exceeded
+        console.warn('Failed to save draft to localStorage:', e);
+      }
       return next;
     });
   };

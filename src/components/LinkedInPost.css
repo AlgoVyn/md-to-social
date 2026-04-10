@@ -4,8 +4,14 @@
   border: 1px solid var(--border-color);
   width: 100%;
   max-width: 552px; /* Standard LinkedIn feed width */
-  box-shadow: 0 0 0 1px rgba(0,0,0,0.08), 0 2px 3px rgba(0,0,0,0.04);
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.08),
+    0 2px 3px rgba(0, 0, 0, 0.04);
+  font-family:
+    -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell,
+    "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 .post-header {
@@ -62,25 +68,21 @@
   line-height: 1.5;
   color: var(--text-color);
   word-wrap: break-word;
+  white-space: pre-wrap;
 }
 
-/* Markdown Specifics mapped to LinkedIn */
-.post-content p {
-  margin-bottom: 1rem;
+/* Text content styling */
+.text-content {
+  display: inline;
 }
-.post-content h1, .post-content h2, .post-content h3 {
-  font-size: 16px;
-  margin: 12px 0 8px 0;
-}
-.post-content ul, .post-content ol {
-  padding-left: 20px;
-  margin-bottom: 1rem;
-}
+
+/* Links - shown as plain text with URL in LinkedIn */
 .post-content a {
   color: var(--primary-color);
   text-decoration: none;
   font-weight: 600;
 }
+
 .post-content a:hover {
   text-decoration: underline;
 }

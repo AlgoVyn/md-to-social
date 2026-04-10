@@ -1,27 +1,42 @@
-import React from 'react';
-import { LinkedInPost } from './LinkedInPost';
-import 'highlight.js/styles/github.css';
-import './LivePreview.css';
+import React from "react";
+import { LinkedInPost } from "./LinkedInPost";
+import "highlight.js/styles/github.css";
+import "./LivePreview.css";
 
 interface LivePreviewProps {
-  contentHtml: string;
+  contentText: string;
   platform: string;
 }
 
-export const LivePreview: React.FC<LivePreviewProps> = ({ contentHtml, platform }) => {
+export const LivePreview: React.FC<LivePreviewProps> = ({
+  contentText,
+  platform,
+}) => {
   return (
-    <div className="preview-container">
+    <section 
+      className="preview-container" 
+      aria-label="Live preview"
+      aria-live="polite"
+    >
       <div className="preview-header">
-        <h2 className="preview-title">Live Preview</h2>
-        <span className="preview-badge">{platform}</span>
+        <h2 className="preview-title" id="preview-heading">Live Preview</h2>
+        <span className="preview-badge" aria-label={`Platform: ${platform}`}>
+          {platform}
+        </span>
       </div>
-      <div className="preview-content">
-        {platform === 'linkedin' ? (
-          <LinkedInPost contentHtml={contentHtml} />
+      <div 
+        className="preview-content" 
+        role="region" 
+        aria-labelledby="preview-heading"
+      >
+        {platform === "linkedin" ? (
+          <LinkedInPost contentText={contentText} />
         ) : (
-          <div className="unsupported-platform">Preview for {platform} not yet supported</div>
+          <div className="unsupported-platform" role="status">
+            Preview for {platform} not yet supported
+          </div>
         )}
       </div>
-    </div>
+    </section>
   );
 };

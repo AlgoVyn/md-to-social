@@ -12,37 +12,56 @@ interface ToolbarProps {
 
 export const Toolbar: React.FC<ToolbarProps> = ({ onCopy, onOpenSettings, onOpenHistory, platform, setPlatform }) => {
   return (
-    <div className="toolbar">
+    <header className="toolbar" role="banner" aria-label="Application toolbar">
       <div className="toolbar-logo">
-        <Monitor className="logo-icon" />
+        <Monitor className="logo-icon" aria-hidden="true" />
         <span className="logo-text">MDtoSocial</span>
       </div>
       
-      <div className="toolbar-actions">
+      <nav className="toolbar-actions" aria-label="Main actions">
+        <label htmlFor="platform-select" className="visually-hidden">
+          Select social media platform
+        </label>
         <select 
+          id="platform-select"
           value={platform} 
           onChange={(e) => setPlatform(e.target.value)}
           className="platform-select"
+          aria-label="Social media platform"
         >
           <option value="linkedin">LinkedIn</option>
           {/* Twitter and others can be added in future */}
         </select>
 
-        <button className="action-button" onClick={onOpenHistory} title="Conversion History">
-          <Clock size={18} />
+        <button 
+          className="action-button" 
+          onClick={onOpenHistory} 
+          aria-haspopup="dialog"
+          aria-label="Open conversion history"
+        >
+          <Clock size={18} aria-hidden="true" />
           <span>History</span>
         </button>
 
-        <button className="action-button" onClick={onOpenSettings} title="Style Settings">
-          <Settings size={18} />
+        <button 
+          className="action-button" 
+          onClick={onOpenSettings} 
+          aria-haspopup="dialog"
+          aria-label="Open style settings"
+        >
+          <Settings size={18} aria-hidden="true" />
           <span>Styles</span>
         </button>
 
-        <button className="action-button primary" onClick={onCopy} title="Copy to Clipboard">
-          <Copy size={18} />
+        <button 
+          className="action-button primary" 
+          onClick={onCopy}
+          aria-label="Copy formatted content to clipboard"
+        >
+          <Copy size={18} aria-hidden="true" />
           <span>Copy</span>
         </button>
-      </div>
-    </div>
+      </nav>
+    </header>
   );
 };

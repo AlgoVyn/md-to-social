@@ -1,0 +1,197 @@
+/* Custom Platform Select Dropdown */
+.platform-select-custom {
+  position: relative;
+  display: inline-block;
+}
+
+/* Trigger button - sized to match toolbar action buttons exactly */
+.platform-select-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 44px;
+  min-height: 44px;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background-color: var(--surface-color);
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+  box-sizing: border-box;
+}
+
+.platform-select-trigger:hover {
+  color: var(--text-color);
+  background-color: var(--secondary-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.platform-select-trigger:focus-visible {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px var(--primary-color) inset;
+  outline: none;
+}
+
+.platform-select-trigger:active {
+  transform: translateY(0);
+}
+
+/* Platform icon - sized to match other toolbar icons */
+.platform-icon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  background-color: #ffffff !important;
+  border-radius: 4px;
+  padding: 2px;
+  box-sizing: content-box;
+  color: #1e1e1e !important;
+}
+
+/* Platform name - compact display */
+.platform-name {
+  flex: 0 1 auto;
+  text-align: left;
+  max-width: 90px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Dropdown arrow */
+.platform-select-arrow {
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+  color: var(--text-secondary);
+}
+
+.platform-select-arrow.open {
+  transform: rotate(180deg);
+}
+
+.platform-select-trigger:hover .platform-select-arrow {
+  color: var(--text-color);
+}
+
+/* Dropdown menu */
+.platform-select-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  min-width: 180px;
+  z-index: var(--z-dropdown);
+  margin: 0;
+  padding: 0.25rem;
+  list-style: none;
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  max-height: 300px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+/* Dropdown option */
+.platform-select-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  box-sizing: border-box;
+}
+
+.platform-select-option:hover {
+  background-color: var(--secondary-hover);
+  color: var(--text-color);
+}
+
+.platform-select-option.selected {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Keep icons dark even when selected/hovered - they have white backgrounds */
+.platform-select-option.selected .platform-icon,
+.platform-select-option:hover .platform-icon,
+.platform-select-trigger .platform-icon {
+  background-color: #ffffff !important;
+  color: #1e1e1e !important;
+}
+
+/* Scrollbar styling for dropdown */
+.platform-select-dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+
+.platform-select-dropdown::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.platform-select-dropdown::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 3px;
+}
+
+.platform-select-dropdown::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .platform-select-trigger {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.75rem;
+    height: 40px;
+    min-height: 40px;
+  }
+
+  .platform-name {
+    max-width: 70px;
+  }
+
+  .platform-select-dropdown {
+    max-height: 250px;
+    min-width: 160px;
+  }
+
+  .platform-select-option {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .platform-select-trigger {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.5rem;
+    height: 38px;
+    min-height: 38px;
+  }
+
+  .platform-name {
+    max-width: 50px;
+  }
+
+  .platform-select-dropdown {
+    min-width: 140px;
+  }
+
+  .platform-select-option {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.5rem;
+  }
+}

@@ -318,24 +318,29 @@ describe('Workspace', () => {
   });
 
   describe('platform selection', () => {
-    it('should display current platform in select dropdown', () => {
+    it('should display current platform in dropdown', () => {
       render(<Workspace />);
 
-      // Look for select by its label instead of display value
-      const select = screen.getByLabelText('Social media platform');
-      expect(select).toBeInTheDocument();
-      expect(select).toHaveValue('linkedin');
+      const trigger = screen.getByLabelText('Select social media platform');
+      expect(trigger).toBeInTheDocument();
+      expect(trigger.textContent).toContain('LinkedIn');
     });
 
     it('should maintain selected platform value', async () => {
       render(<Workspace />);
 
-      const select = screen.getByLabelText('Social media platform');
-      expect(select).toHaveValue('linkedin');
+      const trigger = screen.getByLabelText('Select social media platform');
+      expect(trigger.textContent).toContain('LinkedIn');
 
       // Can switch to another platform
-      await userEvent.selectOptions(select, 'twitter');
-      expect(select).toHaveValue('twitter');
+      await userEvent.click(trigger);
+      const twitterOption = screen.getByRole('option', { name: /Twitter\/X/i });
+      await userEvent.click(twitterOption);
+
+      // Check that the trigger now shows Twitter
+      await waitFor(() => {
+        expect(trigger.textContent).toContain('Twitter');
+      });
     });
   });
 

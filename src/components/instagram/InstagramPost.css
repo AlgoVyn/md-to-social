@@ -133,3 +133,65 @@
   color: #8e8e8e;
   text-transform: uppercase;
 }
+
+/* Instagram Sample Image Container */
+.instagram-image-container {
+  width: 100%;
+  aspect-ratio: 1;
+  background: linear-gradient(
+    135deg,
+    #667eea 0%,
+    #764ba2 25%,
+    #f093fb 50%,
+    #f5576c 75%,
+    #4facfe 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.instagram-sample-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sample-image-gradient {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(102, 126, 234, 0.9) 0%,
+    rgba(118, 75, 162, 0.85) 25%,
+    rgba(240, 147, 251, 0.8) 50%,
+    rgba(245, 87, 108, 0.85) 75%,
+    rgba(79, 172, 254, 0.9) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  gap: 12px;
+}
+
+.sample-image-icon {
+  opacity: 0.9;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.sample-image-text {
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.9;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Keep the old placeholder styles for backwards compatibility */
+.instagram-image-placeholder {
+  display: none;
+}

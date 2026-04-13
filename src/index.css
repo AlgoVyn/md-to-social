@@ -19,8 +19,8 @@
   /* Counter Status Colors */
   --counter-ok-color: #16825d;
   --counter-ok-bg: rgba(22, 130, 93, 0.1);
-  --counter-warning-color: #dcdcaa;
-  --counter-warning-bg: rgba(220, 220, 170, 0.15);
+  --counter-warning-color: #b8860b;
+  --counter-warning-bg: rgba(184, 134, 11, 0.12);
   --counter-over-color: #c75450;
   --counter-over-bg: rgba(199, 84, 80, 0.15);
   --counter-text-muted: #6e6e6e;
@@ -30,6 +30,8 @@
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --shadow-glass: 0 4px 30px rgba(0, 0, 0, 0.05);
+  --shadow-premium: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-elevated: 0 25px 50px -12px rgb(0 0 0 / 0.15);
 
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
@@ -38,6 +40,16 @@
 
   --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Z-Index Scale */
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-tooltip: 300;
+  --z-modal-backdrop: 400;
+  --z-modal: 500;
+  --z-toast: 600;
+  --z-popover: 700;
 
   --glass-bg: rgba(255, 255, 255, 0.8);
   --glass-border: rgba(255, 255, 255, 0.5);
@@ -61,6 +73,8 @@
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.4);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.4);
   --shadow-glass: 0 4px 30px rgba(0, 0, 0, 0.3);
+  --shadow-premium: 0 20px 25px -5px rgb(0 0 0 / 0.5), 0 8px 10px -6px rgb(0 0 0 / 0.5);
+  --shadow-elevated: 0 25px 50px -12px rgb(0 0 0 / 0.5);
 
   --glass-bg: rgba(37, 37, 38, 0.8);
   --glass-border: rgba(255, 255, 255, 0.05);
@@ -68,8 +82,8 @@
   /* Counter Status Colors - Dark Mode */
   --counter-ok-color: #7ee787;
   --counter-ok-bg: rgba(126, 231, 135, 0.15);
-  --counter-warning-color: #ffd700;
-  --counter-warning-bg: rgba(255, 215, 0, 0.2);
+  --counter-warning-color: #ffc107;
+  --counter-warning-bg: rgba(255, 193, 7, 0.2);
   --counter-over-color: #ff6b6b;
   --counter-over-bg: rgba(255, 107, 107, 0.2);
   --counter-text-muted: #858585;
@@ -147,7 +161,7 @@ body {
   color: white;
   padding: 8px;
   text-decoration: none;
-  z-index: 100;
+  z-index: var(--z-tooltip);
   font-weight: 500;
   border-radius: var(--radius-md);
 }
@@ -190,4 +204,42 @@ body {
 
 .retry-button:hover {
   background: var(--primary-hover);
+}
+
+/* Premium Shadow System */
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Disable backdrop-filter for performance */
+  .toolbar {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  :root {
+    --border-color: #000000;
+    --text-secondary: #000000;
+  }
+
+  [data-theme='dark'] {
+    --border-color: #ffffff;
+    --text-secondary: #ffffff;
+  }
+
+  *:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 3px;
+  }
 }

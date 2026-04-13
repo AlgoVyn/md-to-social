@@ -29,19 +29,25 @@ export const InstagramPost: React.FC<InstagramPostProps> = ({ contentText }) => 
         </button>
       </header>
 
-      <div className="instagram-image-placeholder" aria-label="Image placeholder">
-        <svg
-          viewBox="0 0 24 24"
-          width="48"
-          height="48"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.5"
-        >
-          <rect x="3" y="3" width="18" height="18" rx="2" />
-          <circle cx="8.5" cy="8.5" r="1.5" />
-          <path d="M21 15l-5-5L5 21" />
-        </svg>
+      <div className="instagram-image-container" aria-label="Sample post image">
+        <div className="instagram-sample-image">
+          <div className="sample-image-gradient">
+            <svg
+              viewBox="0 0 24 24"
+              width="64"
+              height="64"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1"
+              className="sample-image-icon"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <circle cx="8.5" cy="8.5" r="1.5" />
+              <path d="M21 15l-5-5L5 21" />
+            </svg>
+            <span className="sample-image-text">Sample Image</span>
+          </div>
+        </div>
       </div>
 
       <div className="instagram-content">

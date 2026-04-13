@@ -198,7 +198,7 @@ describe('LivePreview', () => {
     it('should handle empty content for Twitter', () => {
       render(<LivePreview {...defaultProps} platform="twitter" contentText="" />);
 
-      expect(screen.getByText(/Enter content to see thread preview/)).toBeInTheDocument();
+      expect(screen.getByText('Preview Your Content')).toBeInTheDocument();
     });
   });
 

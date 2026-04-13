@@ -85,18 +85,21 @@ describe('Toolbar', () => {
     }
   });
 
-  it('should display current platform in select', () => {
+  it('should display current platform in dropdown', () => {
     render(<Toolbar {...defaultProps} />);
 
-    const select = screen.getByLabelText('Social media platform');
-    expect(select).toHaveValue('linkedin');
+    const trigger = screen.getByLabelText('Select social media platform');
+    expect(trigger).toBeInTheDocument();
+    expect(trigger.textContent).toContain('LinkedIn');
   });
 
   it('should call setPlatform when platform is changed', async () => {
     render(<Toolbar {...defaultProps} />);
 
-    const select = screen.getByLabelText('Social media platform');
-    await userEvent.selectOptions(select, 'twitter');
+    const trigger = screen.getByLabelText('Select social media platform');
+    await userEvent.click(trigger);
+    const twitterOption = screen.getByRole('option', { name: /Twitter\/X/i });
+    await userEvent.click(twitterOption);
 
     expect(defaultProps.setPlatform).toHaveBeenCalledWith('twitter');
   });

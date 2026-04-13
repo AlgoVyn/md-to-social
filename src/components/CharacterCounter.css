@@ -26,6 +26,7 @@
 .counter-text strong {
   font-weight: 600;
   color: var(--text-color);
+  transition: color 0.3s ease;
 }
 
 .counter-separator {
@@ -41,6 +42,9 @@
   width: 2.5rem;
   height: 2.5rem;
   flex-shrink: 0;
+  transform-origin: center;
+  will-change: transform;
+  transition: transform 0.2s ease;
 }
 
 .counter-ring-bg {
@@ -51,6 +55,7 @@
   transition:
     stroke-dashoffset 0.3s ease,
     stroke 0.3s ease;
+  transform-origin: center;
 }
 
 .counter-message {
@@ -118,5 +123,139 @@
 
   .counter-message {
     font-size: 0.7rem;
+  }
+}
+
+/* ============ ANIMATIONS ============ */
+
+/* 1. Idle breathing animation for ALL states */
+@keyframes breathe {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+.character-counter {
+  animation: breathe 3s ease-in-out infinite;
+}
+
+/* 2. Ring rotation animation - subtle continuous motion */
+@keyframes slowRotate {
+  from {
+    transform: rotate(-90deg);
+  }
+  to {
+    transform: rotate(270deg);
+  }
+}
+
+.counter-ring {
+  animation: slowRotate 8s linear infinite;
+}
+
+/* 3. Glow pulse for OK state */
+@keyframes okGlow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 2px var(--counter-ok-color));
+  }
+  50% {
+    filter: drop-shadow(0 0 4px var(--counter-ok-color));
+  }
+}
+
+.counter-ok .counter-ring {
+  animation:
+    slowRotate 8s linear infinite,
+    okGlow 2s ease-in-out infinite;
+}
+
+/* 4. Warning pulse animation */
+@keyframes warningPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 2px var(--counter-warning-color));
+  }
+  50% {
+    transform: scale(1.03);
+    filter: drop-shadow(0 0 6px var(--counter-warning-color));
+  }
+}
+
+.counter-warning .counter-display {
+  animation: warningPulse 1.5s ease-in-out infinite;
+}
+
+.counter-warning .counter-ring {
+  animation: slowRotate 8s linear infinite;
+}
+
+/* 5. Over limit shake animation */
+@keyframes overShake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-2px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(2px);
+  }
+}
+
+.counter-over .counter-display {
+  animation: overShake 0.5s ease-in-out;
+}
+
+.counter-over .counter-ring {
+  animation: slowRotate 8s linear infinite;
+}
+
+/* 6. Message slide-in animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.counter-message {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* 7. Hover scale effect */
+.character-counter:hover .counter-ring {
+  transform: scale(1.08);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .character-counter,
+  .counter-ring,
+  .counter-warning .counter-display,
+  .counter-over .counter-display,
+  .counter-message {
+    animation: none;
+  }
+
+  .character-counter:hover .counter-ring {
+    transform: none;
   }
 }

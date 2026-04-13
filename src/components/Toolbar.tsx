@@ -1,6 +1,6 @@
 import React from 'react';
 import { Settings, Copy, Clock, Sun, Moon, Loader2 } from 'lucide-react';
-import { PLATFORM_CONFIGS } from '../utils/platforms';
+import { PlatformSelect } from './PlatformSelect';
 import logoUrl from '../../logo/logo.svg';
 import './Toolbar.css';
 
@@ -35,22 +35,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({
       </div>
 
       <nav className="toolbar-actions" aria-label="Main actions">
-        <label htmlFor="platform-select" className="visually-hidden">
-          Select social media platform
-        </label>
-        <select
-          id="platform-select"
-          value={platform}
-          onChange={(e) => setPlatform(e.target.value)}
-          className="platform-select"
-          aria-label="Social media platform"
-        >
-          {Object.entries(PLATFORM_CONFIGS).map(([key, config]) => (
-            <option key={key} value={key}>
-              {config.name} ({config.characterLimit.toLocaleString()} chars)
-            </option>
-          ))}
-        </select>
+        <PlatformSelect value={platform} onChange={setPlatform} />
 
         <button
           className="action-button"

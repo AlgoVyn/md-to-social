@@ -27,6 +27,60 @@
   flex-direction: column;
 }
 
+/* Right pane layout - ensure CharacterCounter is visible */
+.pane.right-pane {
+  display: flex;
+  flex-direction: column;
+}
+
+.pane.right-pane > div {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+.pane.right-pane .preview-container {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ultra-compact Character Counter at bottom */
+.pane.right-pane .character-counter {
+  flex-shrink: 0;
+  padding: 0.35rem 0.75rem;
+  background-color: var(--surface-color);
+  border-top: 1px solid var(--border-color);
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 36px;
+  max-height: 36px;
+}
+
+.pane.right-pane .character-counter .counter-display {
+  flex-direction: row;
+  gap: 0.4rem;
+}
+
+.pane.right-pane .character-counter .counter-ring {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.pane.right-pane .character-counter .counter-text {
+  font-size: 0.75rem;
+}
+
+.pane.right-pane .character-counter .counter-message {
+  font-size: 0.7rem;
+  white-space: nowrap;
+}
+
 /* Responsive: Stack panes vertically on mobile */
 @media (max-width: 768px) {
   .workspace {
@@ -47,6 +101,12 @@
     flex: none;
     height: 50vh;
     min-height: 300px;
+  }
+
+  .pane.right-pane .character-counter {
+    padding: 0.3rem 0.75rem;
+    min-height: 32px;
+    max-height: 32px;
   }
 }
 

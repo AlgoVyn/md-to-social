@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import { Eye, FileText, Sparkles } from 'lucide-react';
 import { LinkedInPost } from './LinkedInPost';
 import { TwitterThreadPreview } from './twitter/TwitterThreadPreview';
 import { BlueskyPost } from './bluesky/BlueskyPost';
@@ -17,6 +18,45 @@ interface LivePreviewProps {
   contentText: string;
   platform: string;
 }
+
+interface EmptyStateProps {
+  platformName: string;
+  hasContent: boolean;
+}
+
+const EmptyState: React.FC<EmptyStateProps> = ({ platformName, hasContent }) => {
+  if (hasContent) {
+    return (
+      <div className="empty-state" role="status">
+        <div className="empty-state-icon">
+          <Sparkles size={48} aria-hidden="true" />
+        </div>
+        <h3 className="empty-state-title">Thread Created!</h3>
+        <p className="empty-state-message">
+          Your content fits within {platformName}&apos;s character limit as a single post.
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="empty-state" role="status">
+      <div className="empty-state-icon">
+        <Eye size={48} aria-hidden="true" />
+      </div>
+      <h3 className="empty-state-title">Preview Your Content</h3>
+      <p className="empty-state-message">
+        Start typing in the editor to see how your content will appear on {platformName}.
+      </p>
+      <div className="empty-state-tips">
+        <div className="tip-item">
+          <FileText size={16} aria-hidden="true" />
+          <span>Supports Markdown formatting</span>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export const LivePreview: React.FC<LivePreviewProps> = ({ contentText, platform }) => {
   const platformConfig = getPlatformConfig(platform);
@@ -42,9 +82,7 @@ export const LivePreview: React.FC<LivePreviewProps> = ({ contentText, platform 
           );
         }
         return (
-          <div className="empty-preview" role="status">
-            <p>Enter content to see thread preview</p>
-          </div>
+          <EmptyState platformName={platformConfig.name} hasContent={contentText.length > 0} />
         );
 
       case 'bluesky':
@@ -76,13 +114,19 @@ export const LivePreview: React.FC<LivePreviewProps> = ({ contentText, platform 
             aria-label={`${platformConfig.name} preview`}
           >
             <div className="generic-preview-content">
-              <p>{contentText || 'Enter content to preview...'}</p>
+              {contentText ? (
+                <p>{contentText}</p>
+              ) : (
+                <EmptyState platformName={platformConfig.name} hasContent={false} />
+              )}
             </div>
-            <div className="generic-preview-meta">
-              <span>
-                {contentText.length} / {platformConfig.characterLimit} characters
-              </span>
-            </div>
+            {contentText && (
+              <div className="generic-preview-meta">
+                <span>
+                  {contentText.length} / {platformConfig.characterLimit} characters
+                </span>
+              </div>
+            )}
           </div>
         );
     }

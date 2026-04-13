@@ -107,7 +107,7 @@ export const PLATFORM_CONFIGS: Record<string, PlatformConfig> = {
     supportsMentions: true,
     supportsImages: true,
     supportsVideos: true,
-    warningThreshold: 0.95,
+    warningThreshold: 0.9,
   },
   youtube: {
     name: 'YouTube',
@@ -117,34 +117,81 @@ export const PLATFORM_CONFIGS: Record<string, PlatformConfig> = {
     supportsLinks: true,
     supportsHashtags: true,
     supportsMentions: true,
-    supportsImages: false,
-    supportsVideos: false,
+    supportsImages: true,
+    supportsVideos: true,
+    warningThreshold: 0.9,
+  },
+  facebook: {
+    name: 'Facebook',
+    characterLimit: 63206,
+    supportsBold: true,
+    supportsItalic: true,
+    supportsLinks: true,
+    supportsHashtags: true,
+    supportsMentions: true,
+    supportsImages: true,
+    supportsVideos: true,
+    warningThreshold: 0.9,
+  },
+  tiktok: {
+    name: 'TikTok',
+    characterLimit: 2200,
+    supportsBold: true,
+    supportsItalic: true,
+    supportsLinks: true,
+    supportsHashtags: true,
+    supportsMentions: true,
+    supportsImages: true,
+    supportsVideos: true,
+    warningThreshold: 0.9,
+  },
+  telegram: {
+    name: 'Telegram',
+    characterLimit: 4096,
+    supportsBold: true,
+    supportsItalic: true,
+    supportsLinks: true,
+    supportsHashtags: true,
+    supportsMentions: true,
+    supportsImages: true,
+    supportsVideos: true,
     warningThreshold: 0.9,
   },
 };
 
+// Helper function to get platform config
 export const getPlatformConfig = (platform: string): PlatformConfig => {
   return PLATFORM_CONFIGS[platform] || PLATFORM_CONFIGS.linkedin;
 };
 
+// Helper function to calculate character count considering URLs
 export const calculateCharacterCount = (text: string, platform: string): number => {
-  if (platform === 'twitter') {
-    // Twitter counts URLs as 23 characters regardless of actual length
-    const urlRegex = /(https?:\/\/[^\s]+)/g;
-    let count = 0;
-    let lastIndex = 0;
-    let match;
+  const config = getPlatformConfig(platform);
 
-    while ((match = urlRegex.exec(text)) !== null) {
-      count += match.index - lastIndex;
-      count += 23; // Twitter URL length
-      lastIndex = urlRegex.lastIndex;
-    }
-    count += text.length - lastIndex;
-    return count;
+  if (!config.supportsLinks) {
+    // For platforms that don't support links, count the full URL text
+    return text.length;
   }
 
-  return text.length;
+  // Twitter/X and some platforms shorten URLs to a fixed length
+  const urlRegex = /https?:\/\/[^\s]+/g;
+  const urls = text.match(urlRegex) || [];
+
+  if (urls.length === 0) {
+    return text.length;
+  }
+
+  // Twitter counts all URLs as 23 characters (or 24 for https)
+  // For simplicity, we'll use 23 as the URL length for supported platforms
+  const urlPlaceholderLength = 23;
+  let count = text.length;
+
+  for (const url of urls) {
+    count -= url.length;
+    count += urlPlaceholderLength;
+  }
+
+  return count;
 };
 
 export const getCharacterCountStatus = (

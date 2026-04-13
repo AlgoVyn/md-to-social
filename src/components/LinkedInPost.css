@@ -114,3 +114,17 @@
   background-color: var(--bg-color);
   color: var(--text-color);
 }
+
+/* Profile picture with icon */
+.profile-pic-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  background: linear-gradient(135deg, var(--surface-color) 0%, var(--border-color) 100%);
+  border: 2px solid var(--border-color);
+}
+
+.profile-pic-placeholder svg {
+  opacity: 0.6;
+}

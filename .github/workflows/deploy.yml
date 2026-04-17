@@ -31,7 +31,7 @@ jobs:
         run: npm run test:run
 
       - name: Deploy to Cloudflare Pages
-        run: npx wrangler pages deploy dist --project-name=marksocial
+        run: npx wrangler pages deploy dist --project-name=mark-social
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

@@ -24,7 +24,7 @@ describe('Toolbar', () => {
     it('should render logo and app name', () => {
       render(<Toolbar {...defaultProps} />);
 
-      expect(screen.getByText('Markdown2Social')).toBeInTheDocument();
+      expect(screen.getByText('MarkSocial')).toBeInTheDocument();
     });
 
     it('should render PlatformSelect component', () => {

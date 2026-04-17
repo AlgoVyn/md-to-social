@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="content-language" content="en" />
 
-    <title>404 - Page Not Found | Markdown2Social</title>
-    <meta name="title" content="404 - Page Not Found | Markdown2Social" />
+    <title>404 - Page Not Found | MarkSocial</title>
+    <meta name="title" content="404 - Page Not Found | MarkSocial" />
     <meta
       name="description"
       content="The page you're looking for doesn't exist. Explore our free Markdown to social media formatters for Twitter, LinkedIn, Instagram, and more."
@@ -15,8 +15,8 @@
     <meta name="robots" content="noindex, follow" />
     <meta name="theme-color" content="#007acc" />
 
-    <link rel="canonical" href="https://algovyn.com/markdown2social/" />
-    <link rel="icon" type="image/svg+xml" href="/markdown2social/logo/logo.svg" />
+    <link rel="canonical" href="https://algovyn.com/marksocial/" />
+    <link rel="icon" type="image/svg+xml" href="/marksocial/logo/logo.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
@@ -136,28 +136,28 @@
         The page you're looking for doesn't exist or has been moved. Don't worry - you can still use
         our free Markdown formatters!
       </p>
-      <a href="/markdown2social/" class="home-button">Go to Homepage</a>
+      <a href="/marksocial/" class="home-button">Go to Homepage</a>
 
       <section class="platforms">
         <h2>Popular Formatters</h2>
         <div class="platform-grid">
-          <a href="/markdown2social/linkedin/" class="platform-link">LinkedIn</a>
-          <a href="/markdown2social/twitter/" class="platform-link">Twitter/X</a>
-          <a href="/markdown2social/instagram/" class="platform-link">Instagram</a>
-          <a href="/markdown2social/bluesky/" class="platform-link">Bluesky</a>
-          <a href="/markdown2social/mastodon/" class="platform-link">Mastodon</a>
-          <a href="/markdown2social/threads/" class="platform-link">Threads</a>
+          <a href="/marksocial/linkedin/" class="platform-link">LinkedIn</a>
+          <a href="/marksocial/twitter/" class="platform-link">Twitter/X</a>
+          <a href="/marksocial/instagram/" class="platform-link">Instagram</a>
+          <a href="/marksocial/bluesky/" class="platform-link">Bluesky</a>
+          <a href="/marksocial/mastodon/" class="platform-link">Mastodon</a>
+          <a href="/marksocial/threads/" class="platform-link">Threads</a>
         </div>
       </section>
     </main>
 
     <footer class="footer">
-      <p>&copy; 2026 Markdown2Social. Part of <a href="https://algovyn.com">Algovyn</a>.</p>
+      <p>&copy; 2026 MarkSocial. Part of <a href="https://algovyn.com">Algovyn</a>.</p>
     </footer>
 
     <script>
       // Log 404 errors for monitoring (includes referrer and timestamp for debugging)
-      (function() {
+      (function () {
         const errorInfo = {
           type: '404_error',
           path: window.location.pathname,
@@ -165,14 +165,14 @@
           hash: window.location.hash,
           referrer: document.referrer || null,
           timestamp: new Date().toISOString(),
-          userAgent: navigator.userAgent
+          userAgent: navigator.userAgent,
         };
-        
+
         // Log to console for debugging
         if (location.hostname === 'localhost' || location.search.includes('debug=1')) {
           console.log('404 error:', errorInfo);
         }
-        
+
         // Send to analytics if GA is configured
         // Uncomment below when Google Analytics is set up:
         // if (typeof gtag === 'function') {

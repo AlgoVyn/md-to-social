@@ -19,7 +19,7 @@ describe('Workspace', () => {
       renderWithRouter();
 
       // Toolbar elements
-      expect(screen.getByText('Markdown2Social', { selector: '.logo-text' })).toBeInTheDocument();
+      expect(screen.getByText('MarkSocial', { selector: '.logo-text' })).toBeInTheDocument();
       expect(screen.getByText('History')).toBeInTheDocument();
       expect(screen.getByText('Styles')).toBeInTheDocument();
       expect(screen.getByLabelText('Copy formatted content to clipboard')).toBeInTheDocument();
@@ -39,7 +39,7 @@ describe('Workspace', () => {
       const previewContent = document.querySelector('.post-content');
       expect(previewContent).toBeInTheDocument();
       // The preview should contain the converted text content
-      expect(previewContent?.textContent).toMatch(/👋|Markdown2Social converts/);
+      expect(previewContent?.textContent).toMatch(/👋|MarkSocial converts/);
     });
   });
 
@@ -378,7 +378,7 @@ describe('Workspace', () => {
       });
 
       await waitFor(() => {
-        expect(mockSetItem).toHaveBeenCalledWith('markdown2social-drafts', expect.any(String));
+        expect(mockSetItem).toHaveBeenCalledWith('marksocial-drafts', expect.any(String));
       });
     });
 
@@ -399,7 +399,7 @@ describe('Workspace', () => {
       expect(previewContent).toBeInTheDocument();
 
       // Verify the preview contains the expected content
-      expect(previewContent?.textContent).toMatch(/👋|Markdown2Social converts/);
+      expect(previewContent?.textContent).toMatch(/👋|MarkSocial converts/);
     });
 
     it('should apply different styles to preview', async () => {

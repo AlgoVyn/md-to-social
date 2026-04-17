@@ -18,7 +18,7 @@ export interface UseHistoryReturn {
 const MAX_DRAFTS = 20;
 
 // Storage key for drafts
-const STORAGE_KEY = 'markdown2social-drafts';
+const STORAGE_KEY = 'marksocial-drafts';
 
 /**
  * Custom hook for managing draft history in localStorage.

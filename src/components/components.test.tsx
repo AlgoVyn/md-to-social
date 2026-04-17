@@ -43,7 +43,7 @@ describe('Toolbar', () => {
   it('should render all toolbar elements', () => {
     render(<Toolbar {...defaultProps} />);
 
-    expect(screen.getByText('Markdown2Social')).toBeInTheDocument();
+    expect(screen.getByText('MarkSocial')).toBeInTheDocument();
     expect(screen.getByText('History')).toBeInTheDocument();
     expect(screen.getByText('Styles')).toBeInTheDocument();
     expect(screen.getByLabelText('Copy formatted content to clipboard')).toBeInTheDocument();

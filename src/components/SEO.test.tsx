@@ -22,7 +22,7 @@ describe('SEO', () => {
     it('should set title for default/home platform', () => {
       render(<SEO platform="default" />);
 
-      expect(document.title).toContain('Markdown2Social');
+      expect(document.title).toContain('MarkSocial');
       expect(document.title).toContain('12+ Platforms');
     });
 
@@ -30,14 +30,14 @@ describe('SEO', () => {
       render(<SEO platform="linkedin" />);
 
       expect(document.title).toContain('LinkedIn');
-      expect(document.title).toContain('Markdown2Social');
+      expect(document.title).toContain('MarkSocial');
     });
 
     it('should set platform-specific title for Twitter', () => {
       render(<SEO platform="twitter" />);
 
       expect(document.title).toContain('Twitter');
-      expect(document.title).toContain('Markdown2Social');
+      expect(document.title).toContain('MarkSocial');
     });
 
     it('should set platform-specific title for all supported platforms', () => {
@@ -62,7 +62,7 @@ describe('SEO', () => {
 
         render(<SEO platform={platform} />);
 
-        expect(document.title).toContain('Markdown2Social');
+        expect(document.title).toContain('MarkSocial');
         // Title should be platform-specific (not the default)
         expect(document.title).not.toContain('12+ Platforms');
       });
@@ -72,7 +72,7 @@ describe('SEO', () => {
       render(<SEO platform="unknown-platform" />);
 
       // Should fall back to default SEO
-      expect(document.title).toContain('Markdown2Social');
+      expect(document.title).toContain('MarkSocial');
     });
   });
 
@@ -98,7 +98,7 @@ describe('SEO', () => {
 
       const ogTitle = document.querySelector('meta[property="og:title"]');
       expect(ogTitle).toBeInTheDocument();
-      expect(ogTitle?.getAttribute('content')).toContain('Markdown2Social');
+      expect(ogTitle?.getAttribute('content')).toContain('MarkSocial');
 
       const ogDescription = document.querySelector('meta[property="og:description"]');
       expect(ogDescription).toBeInTheDocument();
@@ -153,7 +153,7 @@ describe('SEO', () => {
 
       const data = JSON.parse(jsonLdScript!.textContent || '{}');
       expect(data['@type']).toBe('WebApplication');
-      expect(data.name).toBe('Markdown2Social');
+      expect(data.name).toBe('MarkSocial');
     });
 
     it('should create FAQ structured data for default platform', () => {

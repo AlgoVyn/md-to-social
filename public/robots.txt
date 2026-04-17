@@ -1,5 +1,5 @@
-# robots.txt for Markdown2Social
-# https://algovyn.com/markdown2social/
+# robots.txt for MarkSocial
+# https://algovyn.com/marksocial/
 
 User-agent: *
 Allow: /
@@ -25,7 +25,7 @@ Disallow: /node_modules/
 Disallow: /.git/
 
 # Sitemap location
-Sitemap: https://algovyn.com/markdown2social/sitemap.xml
+Sitemap: https://algovyn.com/marksocial/sitemap.xml
 
 # Googlebot specific
 User-agent: Googlebot

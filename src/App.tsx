@@ -3,7 +3,7 @@ import { Workspace } from './components/Workspace';
 import { PLATFORM_CONFIGS } from './utils/platforms';
 
 // Get base path from Vite environment (removes trailing slash for React Router basename)
-const BASENAME = import.meta.env.BASE_URL?.replace(/\/$/, '') || '/markdown2social';
+const BASENAME = import.meta.env.BASE_URL?.replace(/\/$/, '') || '/marksocial';
 
 // Generate routes for all supported platforms
 const platformRoutes = Object.keys(PLATFORM_CONFIGS).map((platform) => (

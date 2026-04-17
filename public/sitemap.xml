@@ -5,190 +5,190 @@
   
   <!-- Homepage / Default -->
   <url>
-    <loc>https://algovyn.com/markdown2social/</loc>
+    <loc>https://algovyn.com/marksocial/</loc>
     <lastmod>2026-04-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://algovyn.com/markdown2social/logo/og-image.png</image:loc>
-      <image:title>Markdown2Social - Convert Markdown to Social Media Posts</image:title>
+      <image:loc>https://algovyn.com/marksocial/logo/og-image.png</image:loc>
+      <image:title>MarkSocial - Convert Markdown to Social Media Posts</image:title>
       <image:caption>Free tool to convert Markdown to perfectly formatted social media posts for LinkedIn, Twitter, Instagram, and more.</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://algovyn.com/markdown2social/logo/screenshot-wide.png</image:loc>
-      <image:title>Markdown2Social Editor Interface</image:title>
-      <image:caption>The Markdown2Social editor interface showing live preview and formatting options</image:caption>
+      <image:loc>https://algovyn.com/marksocial/logo/screenshot-wide.png</image:loc>
+      <image:title>MarkSocial Editor Interface</image:title>
+      <image:caption>The MarkSocial editor interface showing live preview and formatting options</image:caption>
     </image:image>
-    <xhtml:link rel="alternate" hreflang="en" href="https://algovyn.com/markdown2social/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://algovyn.com/markdown2social/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://algovyn.com/marksocial/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://algovyn.com/marksocial/" />
   </url>
 
   <!-- LinkedIn Formatter Landing Page -->
   <url>
-    <loc>https://algovyn.com/markdown2social/linkedin/</loc>
+    <loc>https://algovyn.com/marksocial/linkedin/</loc>
     <lastmod>2026-04-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://algovyn.com/markdown2social/logo/og-image.png</image:loc>
-      <image:title>LinkedIn Post Formatter - Markdown2Social</image:title>
+      <image:loc>https://algovyn.com/marksocial/logo/og-image.png</image:loc>
+      <image:title>LinkedIn Post Formatter - MarkSocial</image:title>
       <image:caption>Convert Markdown to perfectly formatted LinkedIn posts</image:caption>
     </image:image>
-    <xhtml:link rel="alternate" hreflang="en" href="https://algovyn.com/markdown2social/linkedin/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://algovyn.com/marksocial/linkedin/" />
   </url>
 
   <!-- Twitter/X Formatter Landing Page -->
   <url>
-    <loc>https://algovyn.com/markdown2social/twitter/</loc>
+    <loc>https://algovyn.com/marksocial/twitter/</loc>
     <lastmod>2026-04-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://algovyn.com/markdown2social/logo/og-image.png</image:loc>
-      <image:title>Twitter/X Post Formatter - Markdown2Social</image:title>
+      <image:loc>https://algovyn.com/marksocial/logo/og-image.png</image:loc>
+      <image:title>Twitter/X Post Formatter - MarkSocial</image:title>
       <image:caption>Convert Markdown to Twitter/X posts and threads</image:caption>
     </image:image>
-    <xhtml:link rel="alternate" hreflang="en" href="https://algovyn.com/markdown2social/twitter/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://algovyn.com/marksocial/twitter/" />
   </url>
 
   <!-- Instagram Formatter Landing Page -->
   <url>
-    <loc>https://algovyn.com/markdown2social/instagram/</loc>
+    <loc>https://algovyn.com/marksocial/instagram/</loc>
     <lastmod>2026-04-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://algovyn.com/markdown2social/logo/og-image.png</image:loc>
-      <image:title>Instagram Caption Formatter - Markdown2Social</image:title>
+      <image:loc>https://algovyn.com/marksocial/logo/og-image.png</image:loc>
+      <image:title>Instagram Caption Formatter - MarkSocial</image:title>
       <image:caption>Convert Markdown to Instagram captions</image:caption>
     </image:image>
-    <xhtml:link rel="alternate" hreflang="en" href="https://algovyn.com/markdown2social/instagram/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://algovyn.com/marksocial/instagram/" />
   </url>
 
   <!-- Threads Formatter Landing Page -->
   <url>
-    <loc>https://algovyn.com/markdown2social/threads/</loc>
+    <loc>https://algovyn.com/marksocial/threads/</loc>
     <lastmod>2026-04-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://algovyn.com/markdown2social/logo/og-image.png</image:loc>
-      <image:title>Threads Post Formatter - Markdown2Social</image:title>
+      <image:loc>https://algovyn.com/marksocial/logo/og-image.png</image:loc>
+      <image:title>Threads Post Formatter - MarkSocial</image:title>
       <image:caption>Convert Markdown to Threads posts</image:caption>
     </image:image>
-    <xhtml:link rel="alternate" hreflang="en" href="https://algovyn.com/markdown2social/threads/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://algovyn.com/marksocial/threads/" />
   </url>
 
   <!-- Mastodon Formatter Landing Page -->
   <url>
-    <loc>https://algovyn.com/markdown2social/mastodon/</loc>
+    <loc>https://algovyn.com/marksocial/mastodon/</loc>
     <lastmod>2026-04-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://algovyn.com/markdown2social/logo/og-image.png</image:loc>
-      <image:title>Mastodon Post Formatter - Markdown2Social</image:title>
+      <image:loc>https://algovyn.com/marksocial/logo/og-image.png</image:loc>
+      <image:title>Mastodon Post Formatter - MarkSocial</image:title>
       <image:caption>Convert Markdown to Mastodon toots</image:caption>
     </image:image>
-    <xhtml:link rel="alternate" hreflang="en" href="https://algovyn.com/markdown2social/mastodon/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://algovyn.com/marksocial/mastodon/" />
   </url>
 
   <!-- Bluesky Formatter Landing Page -->
   <url>
-    <loc>https://algovyn.com/markdown2social/bluesky/</loc>
+    <loc>https://algovyn.com/marksocial/bluesky/</loc>
     <lastmod>2026-04-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://algovyn.com/markdown2social/logo/og-image.png</image:loc>
-      <image:title>Bluesky Post Formatter - Markdown2Social</image:title>
+      <image:loc>https://algovyn.com/marksocial/logo/og-image.png</image:loc>
+      <image:title>Bluesky Post Formatter - MarkSocial</image:title>
       <image:caption>Convert Markdown to Bluesky posts</image:caption>
     </image:image>
-    <xhtml:link rel="alternate" hreflang="en" href="https://algovyn.com/markdown2social/bluesky/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://algovyn.com/marksocial/bluesky/" />
   </url>
 
   <!-- Discord Formatter Landing Page -->
   <url>
-    <loc>https://algovyn.com/markdown2social/discord/</loc>
+    <loc>https://algovyn.com/marksocial/discord/</loc>
     <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://algovyn.com/markdown2social/logo/og-image.png</image:loc>
-      <image:title>Discord Message Formatter - Markdown2Social</image:title>
+      <image:loc>https://algovyn.com/marksocial/logo/og-image.png</image:loc>
+      <image:title>Discord Message Formatter - MarkSocial</image:title>
       <image:caption>Convert Markdown to Discord messages</image:caption>
     </image:image>
-    <xhtml:link rel="alternate" hreflang="en" href="https://algovyn.com/markdown2social/discord/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://algovyn.com/marksocial/discord/" />
   </url>
 
   <!-- Reddit Formatter Landing Page -->
   <url>
-    <loc>https://algovyn.com/markdown2social/reddit/</loc>
+    <loc>https://algovyn.com/marksocial/reddit/</loc>
     <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://algovyn.com/markdown2social/logo/og-image.png</image:loc>
-      <image:title>Reddit Post Formatter - Markdown2Social</image:title>
+      <image:loc>https://algovyn.com/marksocial/logo/og-image.png</image:loc>
+      <image:title>Reddit Post Formatter - MarkSocial</image:title>
       <image:caption>Convert Markdown to Reddit posts</image:caption>
     </image:image>
-    <xhtml:link rel="alternate" hreflang="en" href="https://algovyn.com/markdown2social/reddit/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://algovyn.com/marksocial/reddit/" />
   </url>
 
   <!-- YouTube Formatter Landing Page -->
   <url>
-    <loc>https://algovyn.com/markdown2social/youtube/</loc>
+    <loc>https://algovyn.com/marksocial/youtube/</loc>
     <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://algovyn.com/markdown2social/logo/og-image.png</image:loc>
-      <image:title>YouTube Description Formatter - Markdown2Social</image:title>
+      <image:loc>https://algovyn.com/marksocial/logo/og-image.png</image:loc>
+      <image:title>YouTube Description Formatter - MarkSocial</image:title>
       <image:caption>Convert Markdown to YouTube video descriptions</image:caption>
     </image:image>
-    <xhtml:link rel="alternate" hreflang="en" href="https://algovyn.com/markdown2social/youtube/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://algovyn.com/marksocial/youtube/" />
   </url>
 
   <!-- Facebook Formatter Landing Page -->
   <url>
-    <loc>https://algovyn.com/markdown2social/facebook/</loc>
+    <loc>https://algovyn.com/marksocial/facebook/</loc>
     <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://algovyn.com/markdown2social/logo/og-image.png</image:loc>
-      <image:title>Facebook Post Formatter - Markdown2Social</image:title>
+      <image:loc>https://algovyn.com/marksocial/logo/og-image.png</image:loc>
+      <image:title>Facebook Post Formatter - MarkSocial</image:title>
       <image:caption>Convert Markdown to Facebook posts</image:caption>
     </image:image>
-    <xhtml:link rel="alternate" hreflang="en" href="https://algovyn.com/markdown2social/facebook/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://algovyn.com/marksocial/facebook/" />
   </url>
 
   <!-- TikTok Formatter Landing Page -->
   <url>
-    <loc>https://algovyn.com/markdown2social/tiktok/</loc>
+    <loc>https://algovyn.com/marksocial/tiktok/</loc>
     <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://algovyn.com/markdown2social/logo/og-image.png</image:loc>
-      <image:title>TikTok Caption Formatter - Markdown2Social</image:title>
+      <image:loc>https://algovyn.com/marksocial/logo/og-image.png</image:loc>
+      <image:title>TikTok Caption Formatter - MarkSocial</image:title>
       <image:caption>Convert Markdown to TikTok captions</image:caption>
     </image:image>
-    <xhtml:link rel="alternate" hreflang="en" href="https://algovyn.com/markdown2social/tiktok/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://algovyn.com/marksocial/tiktok/" />
   </url>
 
   <!-- Telegram Formatter Landing Page -->
   <url>
-    <loc>https://algovyn.com/markdown2social/telegram/</loc>
+    <loc>https://algovyn.com/marksocial/telegram/</loc>
     <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://algovyn.com/markdown2social/logo/og-image.png</image:loc>
-      <image:title>Telegram Message Formatter - Markdown2Social</image:title>
+      <image:loc>https://algovyn.com/marksocial/logo/og-image.png</image:loc>
+      <image:title>Telegram Message Formatter - MarkSocial</image:title>
       <image:caption>Convert Markdown to Telegram messages</image:caption>
     </image:image>
-    <xhtml:link rel="alternate" hreflang="en" href="https://algovyn.com/markdown2social/telegram/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://algovyn.com/marksocial/telegram/" />
   </url>
 
 </urlset>

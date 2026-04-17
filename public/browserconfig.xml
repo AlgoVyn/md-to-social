@@ -2,10 +2,10 @@
 <browserconfig>
     <msapplication>
         <tile>
-            <square70x70logo src="/markdown2social/logo/logo-70x70.png"/>
-            <square150x150logo src="/markdown2social/logo/logo-150x150.png"/>
-            <wide310x150logo src="/markdown2social/logo/logo-310x150.png"/>
-            <square310x310logo src="/markdown2social/logo/logo-310x310.png"/>
+            <square70x70logo src="/marksocial/logo/logo-70x70.png"/>
+            <square150x150logo src="/marksocial/logo/logo-150x150.png"/>
+            <wide310x150logo src="/marksocial/logo/logo-310x150.png"/>
+            <square310x310logo src="/marksocial/logo/logo-310x310.png"/>
             <TileColor>#007acc</TileColor>
         </tile>
     </msapplication>

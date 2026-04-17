@@ -8,84 +8,84 @@ interface SEOProps {
 // Platform-specific SEO metadata - aligned with PLATFORM_CONFIGS
 const PLATFORM_SEO: Record<string, { title: string; description: string; keywords: string }> = {
   linkedin: {
-    title: 'LinkedIn Post Formatter - Markdown to LinkedIn Converter | Markdown2Social',
+    title: 'LinkedIn Post Formatter - Markdown to LinkedIn Converter | MarkSocial',
     description:
       'Convert Markdown to perfectly formatted LinkedIn posts. Auto-format bold, italic, lists, and links for professional networking content. Free online tool with live preview.',
     keywords:
       'linkedin formatter, linkedin post generator, markdown to linkedin, linkedin content tool, professional networking posts, linkedin text formatting, bold linkedin text',
   },
   twitter: {
-    title: 'Twitter/X Post Formatter - Markdown to Tweet Converter | Markdown2Social',
+    title: 'Twitter/X Post Formatter - Markdown to Tweet Converter | MarkSocial',
     description:
       'Convert Markdown to Twitter/X posts with character counting. Format threads, bold text, and links. Stay within the 280 character limit. Free online tool with thread splitting.',
     keywords:
       'twitter formatter, tweet generator, markdown to twitter, twitter thread maker, X post formatter, character counter, twitter bold text, twitter thread splitter',
   },
   instagram: {
-    title: 'Instagram Caption Formatter - Markdown to Instagram Converter | Markdown2Social',
+    title: 'Instagram Caption Formatter - Markdown to Instagram Converter | MarkSocial',
     description:
       'Convert Markdown to Instagram captions with proper formatting. Bold text, lists, and hashtags for engaging social media content. Free online tool with 2,200 character support.',
     keywords:
       'instagram caption formatter, instagram post generator, markdown to instagram, caption maker, instagram content tool, bold instagram caption, instagram formatting',
   },
   threads: {
-    title: 'Threads Post Formatter - Markdown to Threads Converter | Markdown2Social',
+    title: 'Threads Post Formatter - Markdown to Threads Converter | MarkSocial',
     description:
       "Convert Markdown to Threads posts with 500 character limit tracking. Format text for Meta's text-based social platform. Free online tool with live preview.",
     keywords:
       'threads formatter, threads post generator, markdown to threads, meta threads tool, threads character counter, bold threads text',
   },
   mastodon: {
-    title: 'Mastodon Post Formatter - Markdown to Mastodon Converter | Markdown2Social',
+    title: 'Mastodon Post Formatter - Markdown to Mastodon Converter | MarkSocial',
     description:
       'Convert Markdown to Mastodon toots with 500 character limit. Format posts for the decentralized social network. Free online tool for fediverse content.',
     keywords:
       'mastodon formatter, toot generator, markdown to mastodon, fediverse tool, decentralized social media, mastodon bold text',
   },
   bluesky: {
-    title: 'Bluesky Post Formatter - Markdown to Bluesky Converter | Markdown2Social',
+    title: 'Bluesky Post Formatter - Markdown to Bluesky Converter | MarkSocial',
     description:
       'Convert Markdown to Bluesky posts with 300 character limit tracking. Format content for the AT Protocol social network. Free online tool with live preview.',
     keywords:
       'bluesky formatter, bluesky post generator, markdown to bluesky, at protocol, bluesky character counter, bold bluesky text',
   },
   discord: {
-    title: 'Discord Message Formatter - Markdown to Discord Converter | Markdown2Social',
+    title: 'Discord Message Formatter - Markdown to Discord Converter | MarkSocial',
     description:
       'Convert Markdown to Discord messages with proper formatting. Bold, italic, code blocks, and mentions for Discord communities. Free online tool for 2,000 character messages.',
     keywords:
       'discord formatter, discord message generator, markdown to discord, discord text formatting, community chat tool, discord markdown, discord bold text',
   },
   reddit: {
-    title: 'Reddit Post Formatter - Markdown to Reddit Converter | Markdown2Social',
+    title: 'Reddit Post Formatter - Markdown to Reddit Converter | MarkSocial',
     description:
       'Convert Markdown to Reddit posts and comments. Format text for subreddit submissions with proper styling. Free online tool with 40,000 character support.',
     keywords:
       'reddit formatter, reddit post generator, markdown to reddit, subreddit tool, reddit content formatter, reddit bold text',
   },
   youtube: {
-    title: 'YouTube Description Formatter - Markdown to YouTube Converter | Markdown2Social',
+    title: 'YouTube Description Formatter - Markdown to YouTube Converter | MarkSocial',
     description:
       'Convert Markdown to YouTube video descriptions. Format timestamps, links, and styled text for video content. Free online tool with 5,000 character support.',
     keywords:
       'youtube description formatter, youtube video tool, markdown to youtube, video description generator, youtube seo, youtube timestamps',
   },
   facebook: {
-    title: 'Facebook Post Formatter - Markdown to Facebook Converter | Markdown2Social',
+    title: 'Facebook Post Formatter - Markdown to Facebook Converter | MarkSocial',
     description:
       'Convert Markdown to Facebook posts with proper formatting. Bold, italic, lists, and links for engaging social media content. Free online tool with 63,206 character support.',
     keywords:
       'facebook formatter, facebook post generator, markdown to facebook, social media tool, facebook content creator, bold facebook text',
   },
   tiktok: {
-    title: 'TikTok Caption Formatter - Markdown to TikTok Converter | Markdown2Social',
+    title: 'TikTok Caption Formatter - Markdown to TikTok Converter | MarkSocial',
     description:
       'Convert Markdown to TikTok captions with formatting. Bold text, hashtags, and styled content for viral video descriptions. Free online tool with 2,200 character support.',
     keywords:
       'tiktok caption formatter, tiktok description generator, markdown to tiktok, video caption tool, tiktok content creator, bold tiktok text',
   },
   telegram: {
-    title: 'Telegram Message Formatter - Markdown to Telegram Converter | Markdown2Social',
+    title: 'Telegram Message Formatter - Markdown to Telegram Converter | MarkSocial',
     description:
       'Convert Markdown to Telegram messages with proper formatting. Bold, italic, code snippets for channels, groups, and bots. Free online tool with 4,096 character support.',
     keywords:
@@ -94,7 +94,7 @@ const PLATFORM_SEO: Record<string, { title: string; description: string; keyword
 };
 
 const DEFAULT_SEO = {
-  title: 'Markdown2Social - Free Markdown to Social Media Converter | 12+ Platforms',
+  title: 'MarkSocial - Free Markdown to Social Media Converter | 12+ Platforms',
   description:
     'Free online tool to convert Markdown to formatted posts for LinkedIn, Twitter/X, Instagram, Mastodon, Bluesky, Reddit, YouTube, Discord, Facebook, TikTok, Telegram, and Threads. Features live preview, character counting, one-click copy, multiple formatting styles, thread splitting, and draft history.',
   keywords:
@@ -102,7 +102,7 @@ const DEFAULT_SEO = {
 };
 
 // Base URL configurable via environment variable
-const BASE_URL = import.meta.env.VITE_BASE_URL || 'https://algovyn.com/markdown2social';
+const BASE_URL = import.meta.env.VITE_BASE_URL || 'https://algovyn.com/marksocial';
 
 // OG Image dimensions for better social sharing
 const OG_IMAGE_WIDTH = '1200';
@@ -120,10 +120,10 @@ const FAQ_STRUCTURED_DATA = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'What is Markdown2Social?',
+      name: 'What is MarkSocial?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Markdown2Social is a free online tool that converts Markdown formatting into styled text for social media platforms. It supports LinkedIn, Twitter/X, Instagram, Mastodon, Bluesky, Reddit, YouTube, Discord, Facebook, TikTok, Telegram, and Threads.',
+        text: 'MarkSocial is a free online tool that converts Markdown formatting into styled text for social media platforms. It supports LinkedIn, Twitter/X, Instagram, Mastodon, Bluesky, Reddit, YouTube, Discord, Facebook, TikTok, Telegram, and Threads.',
       },
     },
     {
@@ -139,15 +139,15 @@ const FAQ_STRUCTURED_DATA = {
       name: 'Which social media platforms are supported?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Markdown2Social supports 12+ platforms including LinkedIn, Twitter/X (with thread splitting), Instagram, Threads, Mastodon, Bluesky, Discord, Reddit, YouTube, Facebook, TikTok, and Telegram. Each platform has accurate character limits and formatting options.',
+        text: 'MarkSocial supports 12+ platforms including LinkedIn, Twitter/X (with thread splitting), Instagram, Threads, Mastodon, Bluesky, Discord, Reddit, YouTube, Facebook, TikTok, and Telegram. Each platform has accurate character limits and formatting options.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Is Markdown2Social free to use?',
+      name: 'Is MarkSocial free to use?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes, Markdown2Social is completely free to use. All processing happens client-side in your browser, so your content never leaves your device. No signup or account required.',
+        text: 'Yes, MarkSocial is completely free to use. All processing happens client-side in your browser, so your content never leaves your device. No signup or account required.',
       },
     },
     {
@@ -155,7 +155,7 @@ const FAQ_STRUCTURED_DATA = {
       name: 'Does it support Twitter/X threads?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "Yes! When you exceed Twitter's 280 character limit, Markdown2Social automatically splits your content into a thread. The preview shows each post with navigation arrows so you can copy individual posts in sequence.",
+        text: "Yes! When you exceed Twitter's 280 character limit, MarkSocial automatically splits your content into a thread. The preview shows each post with navigation arrows so you can copy individual posts in sequence.",
       },
     },
     {
@@ -171,7 +171,7 @@ const FAQ_STRUCTURED_DATA = {
       name: 'Can I save my drafts?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "Yes! Markdown2Social automatically saves your drafts with timestamps to your browser's local storage. You can access your history anytime and restore previous versions with one click.",
+        text: "Yes! MarkSocial automatically saves your drafts with timestamps to your browser's local storage. You can access your history anytime and restore previous versions with one click.",
       },
     },
   ],
@@ -182,7 +182,7 @@ export const SEO: React.FC<SEOProps> = ({ platform }) => {
   // Use DEFAULT_SEO for home page ('default'), otherwise use platform-specific SEO
   const seo = platform === 'default' ? DEFAULT_SEO : PLATFORM_SEO[platform] || DEFAULT_SEO;
   // For canonical URL: home page is just BASE_URL
-  // Platform pages now have clean URLs (e.g., /markdown2social/linkedin/)
+  // Platform pages now have clean URLs (e.g., /marksocial/linkedin/)
   const canonicalUrl =
     !platform || platform === 'default' ? `${BASE_URL}/` : `${BASE_URL}/${platform}/`;
 
@@ -244,7 +244,7 @@ export const SEO: React.FC<SEOProps> = ({ platform }) => {
     updateMetaTag('og:image:type', 'image/png', true);
     updateMetaTag(
       'og:image:alt',
-      `${config?.name || 'Markdown2Social'} - Convert Markdown to Social Media Posts`,
+      `${config?.name || 'MarkSocial'} - Convert Markdown to Social Media Posts`,
       true
     );
     updateMetaTag('og:updated_time', new Date().toISOString(), true);
@@ -258,7 +258,7 @@ export const SEO: React.FC<SEOProps> = ({ platform }) => {
     // Twitter image alt must use "name" attribute, not "property"
     updateMetaTag(
       'twitter:image:alt',
-      `${config?.name || 'Markdown2Social'} - Convert Markdown to Social Media Posts`,
+      `${config?.name || 'MarkSocial'} - Convert Markdown to Social Media Posts`,
       false // use "name" prefix, not "property"
     );
 
@@ -289,7 +289,7 @@ export const SEO: React.FC<SEOProps> = ({ platform }) => {
     const structuredData = {
       '@context': 'https://schema.org',
       '@type': 'WebApplication',
-      name: 'Markdown2Social',
+      name: 'MarkSocial',
       url: canonicalUrl,
       applicationCategory: 'UtilitiesApplication',
       operatingSystem: 'Any',
@@ -304,7 +304,7 @@ export const SEO: React.FC<SEOProps> = ({ platform }) => {
       softwareVersion: SOFTWARE_VERSION,
       author: {
         '@type': 'Organization',
-        name: 'Markdown2Social',
+        name: 'MarkSocial',
         url: BASE_URL,
       },
       image: {

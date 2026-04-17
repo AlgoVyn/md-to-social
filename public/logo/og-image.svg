@@ -35,7 +35,7 @@
   </g>
   
   <!-- Title -->
-  <text x="780" y="270" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" fill="#ffffff" text-anchor="middle">Markdown2Social</text>
+  <text x="780" y="270" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" fill="#ffffff" text-anchor="middle">MarkSocial</text>
   
   <!-- Subtitle -->
   <text x="780" y="340" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="400" fill="rgba(255,255,255,0.9)" text-anchor="middle">Convert Markdown to Social Media Posts</text>

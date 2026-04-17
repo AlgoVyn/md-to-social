@@ -1,7 +1,7 @@
 export const PLATFORM_TEMPLATES: Record<string, string> = {
-  linkedin: `# Welcome to Markdown2Social 👋
+  linkedin: `# Welcome to MarkSocial 👋
 
-**Markdown2Social** converts your Markdown into perfectly formatted posts for LinkedIn and other social platforms.
+**MarkSocial** converts your Markdown into perfectly formatted posts for LinkedIn and other social platforms.
 
 ## ✨ What You Can Do
 
@@ -31,7 +31,7 @@ Watch the live counter (LinkedIn limit: **3,000 characters**) as you write. Stay
 
 *Start writing your professional post above...*`,
 
-  twitter: `# Markdown2Social 🐦
+  twitter: `# MarkSocial 🐦
 
 Convert **Markdown** to perfect _Twitter/X_ posts!
 
@@ -48,7 +48,7 @@ _Italic_: \`_text_\`
 
 Write your tweet here... 🚀`,
 
-  instagram: `# Markdown2Social 📸
+  instagram: `# MarkSocial 📸
 
 Transform **Markdown** into beautiful Instagram captions!
 
@@ -65,7 +65,7 @@ Transform **Markdown** into beautiful Instagram captions!
 
 Write your caption here... ✨`,
 
-  threads: `# Markdown2Social 🧵
+  threads: `# MarkSocial 🧵
 
 Write **formatted** posts for Threads!
 
@@ -82,7 +82,7 @@ Write **formatted** posts for Threads!
 
 Share your thoughts... 💭`,
 
-  mastodon: `# Markdown2Social 🐘
+  mastodon: `# MarkSocial 🐘
 
 Create **formatted** toots for Mastodon!
 
@@ -99,7 +99,7 @@ Create **formatted** toots for Mastodon!
 
 Write your toot here... 🦣`,
 
-  bluesky: `# Markdown2Social ☁️
+  bluesky: `# MarkSocial ☁️
 
 Format posts for **Bluesky** with ease!
 
@@ -115,7 +115,7 @@ Format posts for **Bluesky** with ease!
 
 Keep it under 300 characters! 📝`,
 
-  discord: `# Markdown2Social 💬
+  discord: `# MarkSocial 💬
 
 Perfect **Discord** formatting from Markdown!
 
@@ -133,7 +133,7 @@ Perfect **Discord** formatting from Markdown!
 
 Write your message...`,
 
-  reddit: `# Markdown2Social - Reddit Edition
+  reddit: `# MarkSocial - Reddit Edition
 
 Create perfectly **formatted** Reddit posts!
 
@@ -152,7 +152,7 @@ Create perfectly **formatted** Reddit posts!
 
 Write your post content here...`,
 
-  youtube: `# Markdown2Social - YouTube Descriptions
+  youtube: `# MarkSocial - YouTube Descriptions
 
 Format your **video descriptions** perfectly!
 
@@ -175,7 +175,7 @@ Format your **video descriptions** perfectly!
 
 Write your description here...`,
 
-  facebook: `# Markdown2Social - Facebook Posts
+  facebook: `# MarkSocial - Facebook Posts
 
 Create engaging **Facebook** posts with proper formatting!
 
@@ -198,7 +198,7 @@ Create engaging **Facebook** posts with proper formatting!
 
 Write your Facebook post here...`,
 
-  tiktok: `# Markdown2Social - TikTok Captions
+  tiktok: `# MarkSocial - TikTok Captions
 
 Create catchy **TikTok** captions with formatting!
 
@@ -221,7 +221,7 @@ Create catchy **TikTok** captions with formatting!
 
 Create your caption here...`,
 
-  telegram: `# Markdown2Social - Telegram Messages
+  telegram: `# MarkSocial - Telegram Messages
 
 Format **Telegram** messages with Markdown!
 

@@ -1,12 +1,12 @@
 <div align="center">
 
-# 📝 → 📱 Markdown2Social
+# 📝 → 📱 MarkSocial
 
 **Write in Markdown. Post anywhere.**
 
 A sleek editor that converts Markdown into perfectly formatted posts for LinkedIn, Twitter/X, Instagram, and 9 other platforms.
 
-**🌐 https://algovyn.com/markdown2social/**
+**🌐 https://algovyn.com/marksocial/**
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.2-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)](https://react.dev/)
@@ -15,7 +15,7 @@ A sleek editor that converts Markdown into perfectly formatted posts for LinkedI
 
 <br>
 
-![Markdown2Social Screenshot](design/markdown_editor_workspace.png)
+![MarkSocial Screenshot](design/markdown_editor_workspace.png)
 
 </div>
 
@@ -38,7 +38,7 @@ A sleek editor that converts Markdown into perfectly formatted posts for LinkedI
 
 ```bash
 # Clone and install
-git clone <repo-url> && cd markdown2social
+git clone <repo-url> && cd marksocial
 npm install
 
 # Start dev server

@@ -1,37 +1,37 @@
 {
-  "name": "Markdown2Social - Markdown to Social Media Converter",
-  "short_name": "Markdown2Social",
+  "name": "MarkSocial - Markdown to Social Media Converter",
+  "short_name": "MarkSocial",
   "description": "Convert Markdown to perfectly formatted social media posts for Twitter/X, LinkedIn, Instagram, Mastodon, Bluesky, Reddit, YouTube, Discord, Facebook, TikTok, and Telegram.",
-  "start_url": "/markdown2social/",
+  "start_url": "/marksocial/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#007acc",
   "orientation": "any",
-  "scope": "/markdown2social/",
+  "scope": "/marksocial/",
   "lang": "en",
   "dir": "ltr",
   "categories": ["productivity", "utilities", "social"],
   "icons": [
     {
-      "src": "/markdown2social/logo/logo.svg",
+      "src": "/marksocial/logo/logo.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
     },
     {
-      "src": "/markdown2social/logo/logo-16x16.png",
+      "src": "/marksocial/logo/logo-16x16.png",
       "sizes": "16x16",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/markdown2social/logo/logo-32x32.png",
+      "src": "/marksocial/logo/logo-32x32.png",
       "sizes": "32x32",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/markdown2social/logo/logo-180x180.png",
+      "src": "/marksocial/logo/logo-180x180.png",
       "sizes": "180x180",
       "type": "image/png",
       "purpose": "any maskable"
@@ -39,11 +39,11 @@
   ],
   "screenshots": [
     {
-      "src": "/markdown2social/logo/screenshot-wide.png",
+      "src": "/marksocial/logo/screenshot-wide.png",
       "sizes": "1280x720",
       "type": "image/png",
       "form_factor": "wide",
-      "label": "Markdown2Social Editor Interface - Desktop View"
+      "label": "MarkSocial Editor Interface - Desktop View"
     }
   ],
   "shortcuts": [
@@ -51,43 +51,43 @@
       "name": "LinkedIn Formatter",
       "short_name": "LinkedIn",
       "description": "Convert Markdown to LinkedIn posts",
-      "url": "/markdown2social/linkedin/",
-      "icons": [{ "src": "/markdown2social/logo/logo-32x32.png", "sizes": "32x32" }]
+      "url": "/marksocial/linkedin/",
+      "icons": [{ "src": "/marksocial/logo/logo-32x32.png", "sizes": "32x32" }]
     },
     {
       "name": "Twitter/X Formatter",
       "short_name": "Twitter",
       "description": "Convert Markdown to Twitter/X posts",
-      "url": "/markdown2social/twitter/",
-      "icons": [{ "src": "/markdown2social/logo/logo-32x32.png", "sizes": "32x32" }]
+      "url": "/marksocial/twitter/",
+      "icons": [{ "src": "/marksocial/logo/logo-32x32.png", "sizes": "32x32" }]
     },
     {
       "name": "Instagram Formatter",
       "short_name": "Instagram",
       "description": "Convert Markdown to Instagram captions",
-      "url": "/markdown2social/instagram/",
-      "icons": [{ "src": "/markdown2social/logo/logo-32x32.png", "sizes": "32x32" }]
+      "url": "/marksocial/instagram/",
+      "icons": [{ "src": "/marksocial/logo/logo-32x32.png", "sizes": "32x32" }]
     },
     {
       "name": "Mastodon Formatter",
       "short_name": "Mastodon",
       "description": "Convert Markdown to Mastodon toots",
-      "url": "/markdown2social/mastodon/",
-      "icons": [{ "src": "/markdown2social/logo/logo-32x32.png", "sizes": "32x32" }]
+      "url": "/marksocial/mastodon/",
+      "icons": [{ "src": "/marksocial/logo/logo-32x32.png", "sizes": "32x32" }]
     },
     {
       "name": "Bluesky Formatter",
       "short_name": "Bluesky",
       "description": "Convert Markdown to Bluesky posts",
-      "url": "/markdown2social/bluesky/",
-      "icons": [{ "src": "/markdown2social/logo/logo-32x32.png", "sizes": "32x32" }]
+      "url": "/marksocial/bluesky/",
+      "icons": [{ "src": "/marksocial/logo/logo-32x32.png", "sizes": "32x32" }]
     },
     {
       "name": "Threads Formatter",
       "short_name": "Threads",
       "description": "Convert Markdown to Threads posts",
-      "url": "/markdown2social/threads/",
-      "icons": [{ "src": "/markdown2social/logo/logo-32x32.png", "sizes": "32x32" }]
+      "url": "/marksocial/threads/",
+      "icons": [{ "src": "/marksocial/logo/logo-32x32.png", "sizes": "32x32" }]
     }
   ],
   "features": [
@@ -103,7 +103,7 @@
   "related_applications": [
     {
       "platform": "web",
-      "url": "https://algovyn.com/markdown2social/"
+      "url": "https://algovyn.com/marksocial/"
     }
   ],
   "prefer_related_applications": false,

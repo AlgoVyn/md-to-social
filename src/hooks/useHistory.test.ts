@@ -23,7 +23,7 @@ describe('useHistory', () => {
 
       renderHook(() => useHistory());
 
-      expect(localStorage.getItem).toHaveBeenCalledWith('markdown2social-drafts');
+      expect(localStorage.getItem).toHaveBeenCalledWith('marksocial-drafts');
     });
 
     it('should handle invalid localStorage data gracefully', () => {
@@ -115,10 +115,7 @@ describe('useHistory', () => {
         result.current.saveDraft('Draft to save');
       });
 
-      expect(localStorage.setItem).toHaveBeenCalledWith(
-        'markdown2social-drafts',
-        expect.any(String)
-      );
+      expect(localStorage.setItem).toHaveBeenCalledWith('marksocial-drafts', expect.any(String));
     });
 
     it('should add new drafts at the beginning of the array', () => {

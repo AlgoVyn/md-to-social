@@ -1,6 +1,6 @@
 /* TEAM */
-    Developer: Markdown2Social Team
-    Contact: https://github.com/algovyn/markdown2social
+    Developer: MarkSocial Team
+    Contact: https://github.com/algovyn/mark-social
     From: Global
 
 /* THANKS */
@@ -20,9 +20,9 @@
     Software: VS Code, Git, GitHub Actions
 
 /* ABOUT */
-    Markdown2Social is a free, open-source tool that converts Markdown
+    MarkSocial is a free, open-source tool that converts Markdown
     to perfectly formatted social media posts. Built with love for
     content creators who prefer writing in Markdown.
 
-    Repository: https://github.com/algovyn/markdown2social
+    Repository: https://github.com/algovyn/mark-social
     License: MIT

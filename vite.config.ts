@@ -8,7 +8,7 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [react()],
-    base: env.VITE_BASE_PATH || '/markdown2social/',
+    base: env.VITE_BASE_PATH || '/marksocial/',
 
     // Build optimizations for SEO and performance
     build: {

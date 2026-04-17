@@ -31,7 +31,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({
     <header className="toolbar" role="banner" aria-label="Application toolbar">
       <div className="toolbar-logo">
         <img src={logoUrl} alt="" className="logo-icon" aria-hidden="true" />
-        <span className="logo-text">Markdown2Social</span>
+        <span className="logo-text">MarkSocial</span>
       </div>
 
       <nav className="toolbar-actions" aria-label="Main actions">

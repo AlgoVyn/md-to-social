@@ -1,9 +1,9 @@
-# Security.txt for Markdown2Social
+# Security.txt for MarkSocial
 # https://securitytxt.org/
 
 # Contact information for security issues
 Contact: https://algovyn.com/contact
-Contact: https://github.com/algovyn/markdown2social/issues
+Contact: https://github.com/algovyn/mark-social/issues
 
 # Acknowledgments
 Acknowledgments: https://algovyn.com/thanks
@@ -15,7 +15,7 @@ Policy: https://algovyn.com/security-policy
 Preferred-Languages: en
 
 # Canonical location
-Canonical: https://algovyn.com/markdown2social/.well-known/security.txt
+Canonical: https://algovyn.com/marksocial/.well-known/security.txt
 Expires: 2027-04-16T00:00:00.000Z
 
 # Privacy & Security Note

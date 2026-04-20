@@ -1,5 +1,4 @@
 import { marked } from 'marked';
-import { markedHighlight } from 'marked-highlight';
 import hljs from 'highlight.js';
 import DOMPurify from 'dompurify';
 // DOMPurify configuration for strict sanitization
@@ -51,15 +50,38 @@ const CLIPBOARD_PURIFY_CONFIG = {
   ALLOWED_ATTR: [...PURIFY_CONFIG.ALLOWED_ATTR, 'style'],
 };
 
-marked.use(
-  markedHighlight({
-    langPrefix: 'hljs language-',
-    highlight(code, lang) {
-      const language = hljs.getLanguage(lang) ? lang : 'plaintext';
-      return hljs.highlight(code, { language }).value;
-    },
-  })
-);
+// Custom renderer to add line numbers to code blocks
+const renderer = new marked.Renderer();
+
+renderer.code = (code: string, language?: string, _escaped?: boolean): string => {
+  // Handle empty code blocks gracefully
+  if (!code || code.trim() === '') {
+    return `<pre style="display:flex;background:#f6f8fa;border-radius:6px;overflow-x:auto;margin:0;min-height:50px;"><code class="hljs language-plaintext" style="flex:1;padding:16px;font-family:monospace;font-size:14px;line-height:1.5;background:transparent;"></code></pre>`;
+  }
+
+  const lines = code.split('\n');
+  const lineNumberWidth = String(lines.length).length;
+
+  // Generate line numbers HTML
+  // Note: Hardcoded colors (#6a737d, #f6f8fa, #f0f3f6, #d0d7de) are optimized for light mode.
+  // Dark mode support would require theme-aware styling or CSS custom properties.
+  const lineNumbersHtml = lines
+    .map((_, index) => {
+      const lineNum = String(index + 1).padStart(lineNumberWidth, ' ');
+      return `<span style="display:block;color:#6a737d;text-align:right;padding-right:1em;user-select:none;">${lineNum}</span>`;
+    })
+    .join('');
+
+  // Get highlighted code
+  const lang = language || 'plaintext';
+  const validLang = hljs.getLanguage(lang) ? lang : 'plaintext';
+  const highlighted = hljs.highlight(code, { language: validLang }).value;
+
+  // Wrap the code in a div with line numbers and code side by side
+  return `<pre style="display:flex;background:#f6f8fa;border-radius:6px;overflow-x:auto;margin:0;"><div style="background:#f0f3f6;border-right:1px solid #d0d7de;padding:16px 8px;font-family:monospace;font-size:14px;line-height:1.5;">${lineNumbersHtml}</div><code class="hljs language-${validLang}" style="flex:1;padding:16px;font-family:monospace;font-size:14px;line-height:1.5;background:transparent;">${highlighted}</code></pre>`;
+};
+
+marked.use({ renderer });
 
 // CSS styles from highlight.js github theme - inlined for clipboard compatibility
 const CSS_STYLES: Record<string, string> = {
@@ -300,11 +322,19 @@ export const markdownToSocialText = (markdown: string, style: string = 'standard
     );
   }
 
-  // Restore code blocks
+  // Restore code blocks with line numbers
   for (let i = 0; i < codeBlocks.length; i++) {
+    const codeLines = codeBlocks[i].code.split('\n');
+    const lineNumberWidth = String(codeLines.length).length;
+    const numberedCode = codeLines
+      .map((line, index) => {
+        const lineNum = String(index + 1).padStart(lineNumberWidth, ' ');
+        return `${lineNum} | ${line}`;
+      })
+      .join('\n');
     result = result.replace(
       new RegExp(`${DELIM_START}CODEBLOCK${i}${DELIM_END}`, 'g'),
-      `\n${codeBlocks[i].code}\n`
+      `\n${numberedCode}\n`
     );
   }
 

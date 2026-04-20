@@ -231,6 +231,25 @@ describe('markdownToSocialText', () => {
       const result = markdownToSocialText(markdown);
       expect(result).toContain('print("hello")');
     });
+
+    it('should add line numbers to code blocks', () => {
+      const markdown = '```javascript\nconst x = 1;\nconsole.log(x);\n```';
+      const result = markdownToSocialText(markdown);
+      // Check for line number format: "1 | " and "2 | "
+      expect(result).toContain('1 | const x = 1;');
+      expect(result).toContain('2 | console.log(x);');
+    });
+
+    it('should pad line numbers for multi-line code blocks', () => {
+      const markdown =
+        '```\nline1\nline2\nline3\nline4\nline5\nline6\nline7\nline8\nline9\nline10\n```';
+      const result = markdownToSocialText(markdown);
+      // Single digit lines should be padded
+      expect(result).toContain(' 1 | line1');
+      expect(result).toContain(' 9 | line9');
+      // Double digit lines should not be padded
+      expect(result).toContain('10 | line10');
+    });
   });
 
   describe('edge cases', () => {

@@ -27,12 +27,15 @@ Object.defineProperty(window, 'localStorage', {
   value: localStorageMock,
 });
 
-// Mock clipboard
+// Mock clipboard with configurable properties so tests can override them
+const clipboardMock = {
+  writeText: vi.fn(),
+  write: vi.fn(),
+  readText: vi.fn(),
+};
 Object.defineProperty(navigator, 'clipboard', {
-  value: {
-    writeText: vi.fn(),
-    readText: vi.fn(),
-  },
+  value: clipboardMock,
+  configurable: true,
 });
 
 // Mock alert
